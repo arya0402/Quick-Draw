@@ -39,14 +39,15 @@ function draw() {
 }
 
 function check_sketch() {
-    timer_counter = timer_counter + 1;
+    timer_counter++;
     document.getElementById("timer").innerHTML = "Timer:" + timer_counter;
     console.log(timer_counter);
-    if (timer_counter == 400) {
+    if (timer_counter > 400) {
         timer_counter = 0;
+        timer_check = "completed";
     }
 
-    if (timer_check == "completed" | answer_holder == "set") {
+    if (timer_check == "completed" || answer_holder == "set") {
         timer_check = "";
         answer_holder = "";
         updateCanvas();
